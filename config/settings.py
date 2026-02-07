@@ -19,7 +19,10 @@ SECRET_KEY = env('SECRET_KEY', default='django-insecure-default-key-change-me')
 
 DEBUG = env('DEBUG')
 
+# ALLOWED_HOSTS should include 'yourusername.pythonanywhere.com' or Vercel domains in production
 ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=['*'])
+
+CSRF_TRUSTED_ORIGINS = env.list('CSRF_TRUSTED_ORIGINS', default=['https://*.railway.app', 'https://*.up.railway.app', 'https://*.vercel.app'])
 
 # Application definition
 INSTALLED_APPS = [
